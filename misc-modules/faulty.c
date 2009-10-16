@@ -16,7 +16,7 @@
  */
 
 
-#include <linux/config.h>
+#include <linux/configfs.h>
 #include <linux/module.h>
 #include <linux/init.h>
 
@@ -28,7 +28,7 @@
 MODULE_LICENSE("Dual BSD/GPL");
 
 
-int faulty_major = 0;
+int faulty_major = 333;
 
 ssize_t faulty_read(struct file *filp, char __user *buf,
 		    size_t count, loff_t *pos)

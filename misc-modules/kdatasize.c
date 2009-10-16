@@ -14,7 +14,7 @@
  * we cannot take responsibility for errors or fitness for use.
  */
 
-#include <linux/config.h>
+#include <linux/configfs.h>
 #include <linux/module.h>
 
 #include <linux/kernel.h>
@@ -32,9 +32,9 @@ int data_init(void)
 	/* print information and return an error */
 	printk("arch   Size:  char  short  int  long   ptr long-long "
 		" u8 u16 u32 u64\n");
-	printk("%-12s  %3i   %3i   %3i   %3i   %3i   %3i      "
+	printk("x86  %3i   %3i   %3i   %3i   %3i   %3i      "
 		"%3i %3i %3i %3i\n",
-		system_utsname.machine,
+		//system_utsname.machine,
 		(int)sizeof(char), (int)sizeof(short), (int)sizeof(int),
 		(int)sizeof(long),
 		(int)sizeof(void *), (int)sizeof(long long), (int)sizeof(__u8),
