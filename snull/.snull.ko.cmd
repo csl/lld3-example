@@ -1,1 +1,0 @@
-cmd_/home/shulong/桌面/examples/snull/snull.ko := ld -r -m elf_i386  --build-id -o /home/shulong/桌面/examples/snull/snull.ko /home/shulong/桌面/examples/snull/snull.o /home/shulong/桌面/examples/snull/snull.mod.o
