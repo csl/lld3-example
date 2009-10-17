@@ -35,7 +35,6 @@ static int ldd_match(struct device *dev, struct device_driver *driver)
 	return !strncmp(dev->bus_id, driver->name, strlen(driver->name));
 }
 
-
 /*
  * The LDD bus device.
  */
@@ -69,7 +68,7 @@ static int ldd_hotplug(struct device *dev, char **envp, int num_envp,
 struct bus_type ldd_bus_type = {
 	.name = "ldd",
 	.match = ldd_match,
-	.hotplug  = ldd_hotplug,
+	//.hotplug  = ldd_hotplug,
 };
 
 /*
@@ -131,11 +130,12 @@ int register_ldd_driver(struct ldd_driver *driver)
 	if (ret)
 		return ret;
 
-	driver->version_attr.attr.name = "version";
+	driver->version_attr.attr.name = "gversion";
 	driver->version_attr.attr.owner = driver->module;
 	driver->version_attr.attr.mode = S_IRUGO;
 	driver->version_attr.show = show_version;
 	driver->version_attr.store = NULL;
+	
 	return driver_create_file(&driver->driver, &driver->version_attr);
 }
 
@@ -148,7 +148,6 @@ EXPORT_SYMBOL(register_ldd_driver);
 EXPORT_SYMBOL(unregister_ldd_driver);
 
 
-
 static int __init ldd_bus_init(void)
 {
 	int ret;
@@ -157,6 +156,7 @@ static int __init ldd_bus_init(void)
 	if (ret)
 		return ret;
 
+	//Set bus attribute
 	if (bus_create_file(&ldd_bus_type, &bus_attr_version))
 		printk(KERN_NOTICE "Unable to create version attribute\n");
 

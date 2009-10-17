@@ -1,4 +1,4 @@
-access.o: /home/shulong/桌面/examples/scull/access.c \
+access.o: /home/shulong/lld3-example/scull/access.c \
   include/linux/autoconf.h include/linux/kernel.h \
   /usr/lib/gcc/i486-linux-gnu/4.3.3/include/stdarg.h \
   include/linux/linkage.h include/linux/compiler.h \
@@ -151,4 +151,4 @@ access.o: /home/shulong/桌面/examples/scull/access.c \
   /usr/src/linux-headers-2.6.28-15-generic/arch/x86/include/asm/uaccess.h \
   /usr/src/linux-headers-2.6.28-15-generic/arch/x86/include/asm/uaccess_32.h \
   include/linux/tty_driver.h include/linux/tty_ldisc.h \
-  /home/shulong/桌面/examples/scull/scull.h
+  /home/shulong/lld3-example/scull/scull.h

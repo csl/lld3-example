@@ -62,7 +62,7 @@ int jit_fn(char *buf, char **start, off_t offset,
 	init_waitqueue_head (&wait);
 	j0 = jiffies;
 	j1 = j0 + delay;
-
+	
 	switch((long)data) {
 		case JIT_BUSY:
 			while (time_before(jiffies, j1))
@@ -242,6 +242,7 @@ int jit_tasklet(char *buf, char **start, off_t offset,
 	/* register the tasklet */
 	tasklet_init(&data->tlet, jit_tasklet_fn, (unsigned long)data);
 	data->hi = hi;
+
 	if (hi)
 		tasklet_hi_schedule(&data->tlet);
 	else

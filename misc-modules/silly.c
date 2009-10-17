@@ -60,8 +60,6 @@ MODULE_LICENSE("Dual BSD/GPL");
 #define VGA_BASE	0xb8000
 static void __iomem *io_base;
 
-
-
 int silly_open(struct inode *inode, struct file *filp)
 {
 	return 0;
